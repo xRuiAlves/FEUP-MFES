@@ -42,31 +42,9 @@ method bubbleSort(a: array<T>)
     }
 }
 
-
-method printArray<T>(a: array<T>)
-{
-      var i := 0;
-      print "{";
-      while (i < a.Length)
-      decreases a.Length - i;
-      {
-          if (i > 0)
-          {
-              print ", ";
-          }
-          print a[i];
-          i := i+1;
-      }
-      print "}\n" ;
-}
-
-
  method Main() {
     var a := new int[5];
     a[0], a[1], a[2], a[3], a[4] := 9, 4, 6, 3, 8;
-    print "before sorting: ";
-    printArray(a);  
     bubbleSort(a);
-    print "after sorting: ";
-    printArray(a);  
+    assert isSorted(a);
 }
